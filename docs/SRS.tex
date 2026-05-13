@@ -1,0 +1,569 @@
+\documentclass[12pt]{article}
+
+\usepackage{geometry}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{array}
+
+\geometry{margin=1in}
+
+\title{
+    \textbf{Software Requirements Specification} \\
+    JPL Lunar Detection Pipeline
+}
+\author{
+    Software Engineering Tools Final Project \\
+    Course: CS3338 \\
+    Team Members: [Name 1], [Name 2], [Name 3], [Name 4]
+}
+\date{Snapshot 1}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+
+\section*{Version History}
+\addcontentsline{toc}{section}{Version History}
+
+\begin{longtable}{|p{1.5in}|p{1.5in}|p{3in}|}
+\hline
+\textbf{Version} & \textbf{Date} & \textbf{Description} \\
+\hline
+1.0 & [Insert Date] & Initial Software Requirements Specification for Snapshot 1. Includes project overview, external interface requirements, functional requirements, non-functional requirements, and legal and ethical considerations. \\
+\hline
+\end{longtable}
+
+\newpage
+
+\section{Introduction}
+
+\subsection{Purpose}
+
+The purpose of this Software Requirements Specification is to define the expected requirements for the JPL Lunar Detection Pipeline. The project is a simulated open-source computer vision toolset designed to detect and map lunar surface features such as craters, boulders, and other geological structures.
+
+This document describes what the system should do from the perspective of users, developers, testers, and project stakeholders. Since this project is being completed for a Software Engineering Tools course, the focus is on project planning, documentation, mock data, tool usage, and software engineering workflow rather than building a fully functional production system.
+
+\subsection{Intended Audience}
+
+The intended audience for this document includes:
+
+\begin{itemize}
+    \item Course instructor reviewing the final project.
+    \item Student team members working on the project.
+    \item Developers responsible for designing the simulated software system.
+    \item Testers creating TestRail test cases.
+    \item Project managers creating Jira tasks and sprint plans.
+    \item Future contributors who may want to understand the planned requirements.
+\end{itemize}
+
+\subsection{Project Scope}
+
+The JPL Lunar Detection Pipeline will simulate a computer vision system that accepts lunar surface imagery, processes the image, identifies surface features, and displays detection results to the user.
+
+The system will include the following major capabilities:
+
+\begin{itemize}
+    \item Uploading lunar surface images.
+    \item Simulating image preprocessing.
+    \item Simulating detection of craters, boulders, and geological structures.
+    \item Displaying mock detection results through a dashboard.
+    \item Storing image metadata and detection results.
+    \item Providing a project workflow that uses GitHub, Docker, Jira, TestRail, and LaTeX documentation.
+\end{itemize}
+
+The project will not require a fully trained machine learning model. Instead, mock data will be used to simulate realistic computer vision results.
+
+\subsection{Definitions, Acronyms, and Abbreviations}
+
+\begin{longtable}{|p{1.5in}|p{4.5in}|}
+\hline
+\textbf{Term} & \textbf{Definition} \\
+\hline
+API & Application Programming Interface. A way for software components to communicate with each other. \\
+\hline
+CV & Computer Vision. A field of computing focused on interpreting visual information from images or videos. \\
+\hline
+Detection & The process of identifying a specific feature or object in an image. \\
+\hline
+JPL & Jet Propulsion Laboratory. Used in this project as part of the simulated project name and theme. \\
+\hline
+Mock Data & Simulated data used to represent realistic system behavior without requiring a fully working implementation. \\
+\hline
+SRS & Software Requirements Specification. A document that defines what a system must do. \\
+\hline
+SDD & Software Design Document. A document that describes how a system will be designed. \\
+\hline
+UI & User Interface. The visual part of the system that users interact with. \\
+\hline
+\end{longtable}
+
+\section{Overall Description}
+
+\subsection{Product Perspective}
+
+The JPL Lunar Detection Pipeline is designed as a simulated web-based tool that supports lunar surface analysis. Users will interact with the system through a browser-based dashboard. The dashboard will send image upload requests to a backend API. The backend will communicate with a simulated detection pipeline and store results in a database.
+
+The system is divided into the following parts:
+
+\begin{itemize}
+    \item Frontend dashboard.
+    \item Backend API.
+    \item Detection pipeline service.
+    \item Database.
+    \item Mock data files.
+    \item Docker Compose configuration.
+    \item GitHub repository containing project documentation.
+\end{itemize}
+
+\subsection{Product Functions}
+
+The system should provide the following major functions:
+
+\begin{itemize}
+    \item Allow users to upload lunar image files.
+    \item Validate uploaded files.
+    \item Simulate lunar image processing.
+    \item Generate mock crater, boulder, and geological structure detections.
+    \item Display detection results in a readable format.
+    \item Store image and detection metadata.
+    \item Allow users to view previous detection runs.
+    \item Support testing through simulated bugs and TestRail test cases.
+\end{itemize}
+
+\subsection{User Classes and Characteristics}
+
+\begin{longtable}{|p{1.7in}|p{4.3in}|}
+\hline
+\textbf{User Class} & \textbf{Description} \\
+\hline
+Student Developer & A team member who contributes to documentation, mock data, Jira tasks, Docker planning, or simulated code. \\
+\hline
+Tester & A team member who creates and runs TestRail test cases based on system requirements. \\
+\hline
+Instructor & The person reviewing the project documents, GitHub repository, and tool usage. \\
+\hline
+Research User & A simulated user who wants to upload lunar imagery and review detection results. \\
+\hline
+Mission Planner & A simulated user who reviews detected craters and boulders to understand possible navigation risks. \\
+\hline
+\end{longtable}
+
+\subsection{Operating Environment}
+
+The simulated system is expected to run in a local development environment using Docker Compose. The expected operating environment includes:
+
+\begin{itemize}
+    \item A computer capable of running Docker.
+    \item A modern web browser such as Chrome, Firefox, Edge, or Safari.
+    \item GitHub for storing project files and documentation.
+    \item Jira for sprint planning and issue tracking.
+    \item TestRail for test case documentation.
+    \item LaTeX for formal project documents.
+\end{itemize}
+
+\subsection{Design and Implementation Constraints}
+
+The following constraints apply to the project:
+
+\begin{itemize}
+    \item The project is a class simulation and does not require a production-ready computer vision model.
+    \item Mock data may be used instead of real machine learning outputs.
+    \item Documents should be written in LaTeX and stored in the GitHub repository.
+    \item The project should demonstrate use of GitHub, Docker, Jira, TestRail, and LaTeX.
+    \item The system should be simple enough for a student team of four to explain and maintain.
+\end{itemize}
+
+\subsection{Assumptions and Dependencies}
+
+The project assumes the following:
+
+\begin{itemize}
+    \item Users will upload valid lunar image files for testing.
+    \item Detection results may be simulated using predefined JSON or CSV files.
+    \item Docker Compose will be used to describe expected services, even if not all services are fully implemented.
+    \item Jira tasks will represent realistic project planning work.
+    \item TestRail documents will be created for later snapshots.
+    \item The system is intended for educational use only.
+\end{itemize}
+
+\section{External Interface Requirements}
+
+\subsection{User Interface Requirements}
+
+The system shall provide a simple web dashboard. The dashboard should be easy for non-expert users to understand.
+
+\subsubsection{Home Page}
+
+The home page shall provide:
+
+\begin{itemize}
+    \item Project name.
+    \item Short description of the lunar detection pipeline.
+    \item Navigation links to upload, results, history, and about pages.
+\end{itemize}
+
+\subsubsection{Upload Page}
+
+The upload page shall allow users to:
+
+\begin{itemize}
+    \item Select a lunar image file from their computer.
+    \item Submit the image for processing.
+    \item View a message confirming that the image was received.
+    \item View an error message if the file type is invalid.
+\end{itemize}
+
+\subsubsection{Results Page}
+
+The results page shall display:
+
+\begin{itemize}
+    \item Uploaded image name.
+    \item Processing status.
+    \item Number of detected craters.
+    \item Number of detected boulders.
+    \item Number of detected geological structures.
+    \item Detection confidence scores.
+    \item Mock bounding box or coordinate data.
+\end{itemize}
+
+\subsubsection{History Page}
+
+The history page shall display previous image processing runs. Each record should include:
+
+\begin{itemize}
+    \item Image ID.
+    \item Image file name.
+    \item Upload date.
+    \item Processing status.
+    \item Total number of detections.
+\end{itemize}
+
+\subsubsection{About Page}
+
+The about page shall explain:
+
+\begin{itemize}
+    \item Project purpose.
+    \item Tools used in the project.
+    \item Limitations of the simulation.
+    \item Team member roles.
+\end{itemize}
+
+\subsection{Software Interface Requirements}
+
+The system is expected to include the following software interfaces:
+
+\begin{longtable}{|p{1.7in}|p{4.3in}|}
+\hline
+\textbf{Interface} & \textbf{Description} \\
+\hline
+Frontend to Backend API & The frontend sends image upload requests and result requests to the backend. \\
+\hline
+Backend to Detection Service & The backend sends image metadata to the simulated detection pipeline. \\
+\hline
+Backend to Database & The backend stores and retrieves image metadata, processing status, and detection results. \\
+\hline
+Docker Compose & Defines the expected services for frontend, backend, database, and detection service. \\
+\hline
+GitHub & Stores source files, documentation, mock data, and project deliverables. \\
+\hline
+Jira & Tracks sprint tasks, feature requests, and simulated bugs. \\
+\hline
+TestRail & Stores test cases and test run summaries for later project snapshots. \\
+\hline
+\end{longtable}
+
+\subsection{Hardware Interface Requirements}
+
+This project does not require specialized hardware. The simulated system should run on a standard student laptop or desktop computer.
+
+Minimum expected hardware:
+
+\begin{itemize}
+    \item Modern laptop or desktop computer.
+    \item Internet connection for GitHub, Jira, and TestRail.
+    \item Enough storage for project files, mock data, and documentation.
+\end{itemize}
+
+\subsection{Communication Interface Requirements}
+
+The system should use standard web communication methods.
+
+\begin{itemize}
+    \item The frontend should communicate with the backend using HTTP requests.
+    \item API data should be formatted as JSON.
+    \item The database should communicate with the backend through a database driver.
+    \item GitHub will be used for version control and collaboration.
+\end{itemize}
+
+\section{System Features and Functional Requirements}
+
+\subsection{Feature 1: Image Upload}
+
+\subsubsection{Description}
+
+The system shall allow users to upload lunar surface images for simulated processing.
+
+\subsubsection{Functional Requirements}
+
+\begin{itemize}
+    \item FR-1.1: The system shall provide an upload button for selecting an image file.
+    \item FR-1.2: The system shall accept common image formats such as PNG, JPG, and JPEG.
+    \item FR-1.3: The system shall reject unsupported file types.
+    \item FR-1.4: The system shall display a confirmation message after a successful upload.
+    \item FR-1.5: The system shall assign an image ID to each uploaded file.
+\end{itemize}
+
+\subsection{Feature 2: Simulated Image Processing}
+
+\subsubsection{Description}
+
+The system shall simulate the processing of lunar image data.
+
+\subsubsection{Functional Requirements}
+
+\begin{itemize}
+    \item FR-2.1: The system shall create a processing job after an image is uploaded.
+    \item FR-2.2: The system shall update the processing status as pending, processing, complete, or failed.
+    \item FR-2.3: The system shall use mock data to simulate detection results.
+    \item FR-2.4: The system shall return detection results to the backend after processing is complete.
+\end{itemize}
+
+\subsection{Feature 3: Lunar Feature Detection Results}
+
+\subsubsection{Description}
+
+The system shall display simulated detection results for lunar surface features.
+
+\subsubsection{Functional Requirements}
+
+\begin{itemize}
+    \item FR-3.1: The system shall display detected craters.
+    \item FR-3.2: The system shall display detected boulders.
+    \item FR-3.3: The system shall display detected geological structures.
+    \item FR-3.4: The system shall show a confidence score for each detection.
+    \item FR-3.5: The system shall show estimated size or coordinate information for each detection.
+\end{itemize}
+
+\subsection{Feature 4: Detection History}
+
+\subsubsection{Description}
+
+The system shall allow users to view previous detection runs.
+
+\subsubsection{Functional Requirements}
+
+\begin{itemize}
+    \item FR-4.1: The system shall store metadata for each uploaded image.
+    \item FR-4.2: The system shall store detection results for each image.
+    \item FR-4.3: The system shall display a history table of previous image scans.
+    \item FR-4.4: The system shall allow the user to select a previous scan and view its results.
+\end{itemize}
+
+\subsection{Feature 5: Project Tool Integration}
+
+\subsubsection{Description}
+
+The project shall demonstrate the use of required software engineering tools.
+
+\subsubsection{Functional Requirements}
+
+\begin{itemize}
+    \item FR-5.1: The project shall use GitHub to store project files and documentation.
+    \item FR-5.2: The project shall include a Docker Compose file describing expected services.
+    \item FR-5.3: The project shall use Jira to represent sprint planning and issue tracking.
+    \item FR-5.4: The project shall include TestRail documentation for test runs.
+    \item FR-5.5: The project shall use LaTeX for formal documents.
+\end{itemize}
+
+\section{Non-Functional Requirements}
+
+\subsection{Usability Requirements}
+
+\begin{itemize}
+    \item NFR-1.1: The user interface should be simple and understandable for student users.
+    \item NFR-1.2: The dashboard should use clear labels for upload, results, history, and about pages.
+    \item NFR-1.3: Error messages should be written in plain language.
+\end{itemize}
+
+\subsection{Performance Requirements}
+
+\begin{itemize}
+    \item NFR-2.1: The mock processing result should appear within a reasonable simulated time.
+    \item NFR-2.2: The system should be able to display at least 20 mock detections for a single image.
+    \item NFR-2.3: The dashboard should load without requiring large external datasets.
+\end{itemize}
+
+\subsection{Reliability Requirements}
+
+\begin{itemize}
+    \item NFR-3.1: The system should not crash when an invalid file type is uploaded.
+    \item NFR-3.2: The system should display an error message if processing fails.
+    \item NFR-3.3: Stored detection results should remain available in the history page during a local session.
+\end{itemize}
+
+\subsection{Security Requirements}
+
+\begin{itemize}
+    \item NFR-4.1: The system should reject unsupported file types.
+    \item NFR-4.2: The system should not expose environment variables or private configuration files.
+    \item NFR-4.3: The system should avoid storing sensitive personal information.
+\end{itemize}
+
+\subsection{Maintainability Requirements}
+
+\begin{itemize}
+    \item NFR-5.1: Project files should be organized in clear folders.
+    \item NFR-5.2: Documentation should be updated at each snapshot.
+    \item NFR-5.3: Mock data should be stored in readable JSON or CSV format.
+    \item NFR-5.4: Jira tasks should be written clearly enough for team members to understand their responsibilities.
+\end{itemize}
+
+\subsection{Portability Requirements}
+
+\begin{itemize}
+    \item NFR-6.1: The system should be described using Docker Compose.
+    \item NFR-6.2: The project should be able to run or be explained on a standard development machine.
+    \item NFR-6.3: Documentation should be stored in the GitHub repository so it can be accessed by all team members.
+\end{itemize}
+
+\section{Legal and Ethical Considerations}
+
+\subsection{Data Privacy}
+
+The system is not intended to collect personal user data. Uploaded images should be limited to lunar surface imagery or mock image data. If user accounts are simulated, the system should use fake users and mock credentials only.
+
+\subsection{Use of Scientific Data}
+
+If real lunar images or scientific datasets are used, the project should cite the source of the data. The team should make sure that any dataset used is publicly available or allowed for educational use.
+
+\subsection{Accuracy and Misinterpretation}
+
+Because this project uses mock detection data, the system should not claim to provide real mission-ready results. Detection results should be clearly labeled as simulated. This is important because inaccurate crater or boulder detection could create safety risks in a real lunar navigation system.
+
+\subsection{Open-Source Responsibility}
+
+Since the project is described as open-source, the repository should avoid including private keys, passwords, hidden credentials, or restricted datasets. The project should include a README that explains the purpose and limits of the simulation.
+
+\subsection{Bias and Limitations}
+
+Computer vision systems can produce incorrect results when images are low quality, poorly lit, or different from the training data. Although this project uses mock data, the documentation should acknowledge that real detection systems may have false positives and false negatives.
+
+\subsection{Safety Considerations}
+
+In a real mission environment, lunar surface detection tools could influence navigation and scientific decisions. Therefore, detection outputs should be reviewed by human experts before being used for mission-critical decisions. For this student project, all outputs are simulated and should not be used for real navigation.
+
+\section{Mock Data Requirements}
+
+\subsection{Image Metadata}
+
+Each mock image record should include:
+
+\begin{itemize}
+    \item Image ID.
+    \item File name.
+    \item Upload date.
+    \item Image source.
+    \item Resolution.
+    \item Processing status.
+\end{itemize}
+
+\subsection{Detection Metadata}
+
+Each mock detection record should include:
+
+\begin{itemize}
+    \item Detection ID.
+    \item Image ID.
+    \item Feature type.
+    \item Confidence score.
+    \item Bounding box coordinates.
+    \item Estimated size.
+    \item Notes.
+\end{itemize}
+
+\subsection{Example Mock Detection Record}
+
+\begin{verbatim}
+{
+  "detection_id": "D-001",
+  "image_id": "IMG-001",
+  "feature_type": "Crater",
+  "confidence": 0.94,
+  "bounding_box": {
+    "x": 145,
+    "y": 220,
+    "width": 80,
+    "height": 78
+  },
+  "estimated_size_meters": 42,
+  "notes": "Large circular crater detected in upper-left region."
+}
+\end{verbatim}
+
+\section{Test Requirements}
+
+\subsection{Testing Overview}
+
+Testing will be documented through TestRail during later snapshots. Test cases should focus on verifying that the simulated system behaves as expected.
+
+\subsection{Initial Test Areas}
+
+The following areas should be tested:
+
+\begin{itemize}
+    \item Image upload accepts valid file types.
+    \item Image upload rejects invalid file types.
+    \item Processing status changes correctly.
+    \item Mock detection results are displayed.
+    \item Detection history page shows previous scans.
+    \item Error messages are clear and understandable.
+    \item Docker Compose file includes the expected services.
+\end{itemize}
+
+\subsection{Example Test Cases}
+
+\begin{longtable}{|p{1in}|p{2in}|p{3in}|}
+\hline
+\textbf{Test ID} & \textbf{Test Case} & \textbf{Expected Result} \\
+\hline
+TC-001 & Upload valid JPG image & System accepts the image and creates a processing job. \\
+\hline
+TC-002 & Upload invalid TXT file & System rejects the file and displays an error message. \\
+\hline
+TC-003 & View detection results & System displays crater, boulder, and geological structure detections. \\
+\hline
+TC-004 & View scan history & System displays previous image processing records. \\
+\hline
+TC-005 & Simulate failed processing & System displays failed status and a readable error message. \\
+\hline
+\end{longtable}
+
+\section{Future Requirements}
+
+The following features may be added in later snapshots:
+
+\begin{itemize}
+    \item Snapshot 2: Add boulder risk classification for navigation safety.
+    \item Snapshot 3: Add crater size filtering and search features.
+    \item Snapshot 4: Add final reporting, future work, and improved documentation.
+\end{itemize}
+
+\section{References}
+
+\begin{itemize}
+    \item NASA Jet Propulsion Laboratory. Lunar and planetary exploration resources.
+    \item GitHub Documentation. Repository and version control documentation.
+    \item Docker Documentation. Docker Compose documentation.
+    \item Jira Documentation. Sprint planning and issue tracking documentation.
+    \item TestRail Documentation. Test case and test run reporting documentation.
+    \item LaTeX Project Documentation. Document preparation resources.
+\end{itemize}
+
+\end{document}
