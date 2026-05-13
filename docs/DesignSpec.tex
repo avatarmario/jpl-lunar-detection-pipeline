@@ -1,0 +1,459 @@
+\documentclass[12pt]{article}
+
+\usepackage{geometry}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{array}
+
+\geometry{margin=1in}
+
+\title{
+    \textbf{Design Specification} \\
+    JPL Lunar Detection Pipeline
+}
+\author{
+    Software Engineering Tools Final Project \\
+    Course: CS3338 \\
+    Team Members: [Name 1], [Name 2], [Name 3], [Name 4]
+}
+\date{Snapshot 1}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+
+\section*{Version History}
+\addcontentsline{toc}{section}{Version History}
+
+\begin{longtable}{|p{1.5in}|p{1.5in}|p{3in}|}
+\hline
+\textbf{Version} & \textbf{Date} & \textbf{Description} \\
+\hline
+1.0 & [Insert Date] & Initial design specification for Snapshot 1. Includes dashboard pages, system parts, tools, mock data, and planned workflow. \\
+\hline
+\end{longtable}
+
+\newpage
+
+\section{Introduction}
+
+\subsection{Purpose}
+
+The purpose of this Design Specification is to describe the main pages, parts, tools, and planned components of the JPL Lunar Detection Pipeline. This project is a simulated computer vision toolset for identifying lunar surface features such as craters, boulders, and geological structures.
+
+The project is being completed for a Software Engineering Tools class. The main goal is to demonstrate software engineering planning and tool usage rather than build a fully working production system.
+
+\subsection{Project Summary}
+
+The JPL Lunar Detection Pipeline will simulate a system where users can upload lunar surface images and receive detection results. The system will use mock data to represent crater, boulder, and geological structure detections.
+
+The simulated system includes:
+
+\begin{itemize}
+    \item A web dashboard.
+    \item An image upload page.
+    \item A results page.
+    \item A detection history page.
+    \item A backend API.
+    \item A mock detection pipeline.
+    \item A database for storing image and detection records.
+    \item Documentation and project management tools.
+\end{itemize}
+
+\section{User Interface Design}
+
+\subsection{Page Overview}
+
+The web dashboard will be divided into several simple pages. Each page has a specific purpose.
+
+\begin{longtable}{|p{1.7in}|p{4.3in}|}
+\hline
+\textbf{Page} & \textbf{Purpose} \\
+\hline
+Home Page & Introduces the project and provides navigation to the rest of the dashboard. \\
+\hline
+Upload Page & Allows users to upload a lunar surface image for simulated processing. \\
+\hline
+Results Page & Displays mock detection results for craters, boulders, and geological structures. \\
+\hline
+History Page & Shows previous image scans and their processing status. \\
+\hline
+About Page & Explains the project purpose, tools used, team information, and simulation limits. \\
+\hline
+\end{longtable}
+
+\subsection{Home Page Design}
+
+The Home Page will be the first page users see. It should be simple and easy to understand.
+
+\subsubsection{Main Elements}
+
+\begin{itemize}
+    \item Project title: JPL Lunar Detection Pipeline.
+    \item Short project description.
+    \item Navigation menu.
+    \item Button or link to upload a lunar image.
+    \item Short explanation of what the system detects.
+\end{itemize}
+
+\subsubsection{Example Text}
+
+The home page may include the following text:
+
+\begin{quote}
+The JPL Lunar Detection Pipeline is a simulated computer vision toolset that detects craters, boulders, and geological structures from lunar surface imagery.
+\end{quote}
+
+\subsection{Upload Page Design}
+
+The Upload Page allows the user to select an image file and submit it for mock processing.
+
+\subsubsection{Main Elements}
+
+\begin{itemize}
+    \item File upload input.
+    \item ``Process Image'' button.
+    \item File type instructions.
+    \item Upload success message.
+    \item Upload error message.
+\end{itemize}
+
+\subsubsection{Expected Behavior}
+
+\begin{itemize}
+    \item If the user uploads a valid image file, the system accepts the file.
+    \item If the user uploads an invalid file type, the system displays an error.
+    \item After a valid upload, the system creates a mock processing job.
+\end{itemize}
+
+\subsection{Results Page Design}
+
+The Results Page displays simulated detection results after an image has been processed.
+
+\subsubsection{Main Elements}
+
+\begin{itemize}
+    \item Uploaded image name.
+    \item Processing status.
+    \item Detection summary.
+    \item Crater count.
+    \item Boulder count.
+    \item Geological structure count.
+    \item Detection confidence scores.
+    \item Mock bounding box or coordinate information.
+\end{itemize}
+
+\subsubsection{Example Results Table}
+
+\begin{longtable}{|p{1in}|p{1.5in}|p{1.5in}|p{1.5in}|}
+\hline
+\textbf{ID} & \textbf{Feature Type} & \textbf{Confidence} & \textbf{Estimated Size} \\
+\hline
+D-001 & Crater & 94\% & 42 meters \\
+\hline
+D-002 & Boulder & 87\% & 3.2 meters \\
+\hline
+D-003 & Crater & 91\% & 18 meters \\
+\hline
+D-004 & Ridge Structure & 78\% & 120 meters \\
+\hline
+\end{longtable}
+
+\subsection{History Page Design}
+
+The History Page displays previous image scans. This allows users to review past mock processing jobs.
+
+\subsubsection{Main Elements}
+
+\begin{itemize}
+    \item Image ID.
+    \item Image file name.
+    \item Upload date.
+    \item Processing status.
+    \item Total detections.
+    \item Link or button to view results.
+\end{itemize}
+
+\subsection{About Page Design}
+
+The About Page explains the purpose and limitations of the project.
+
+\subsubsection{Main Elements}
+
+\begin{itemize}
+    \item Project description.
+    \item Class purpose.
+    \item Tools used.
+    \item Team member list.
+    \item Statement that detection results are simulated.
+\end{itemize}
+
+\section{System Component Design}
+
+\subsection{Frontend Component}
+
+The frontend is the user-facing part of the system. It will be represented as a React.js dashboard.
+
+\subsubsection{Responsibilities}
+
+\begin{itemize}
+    \item Display project pages.
+    \item Allow image upload.
+    \item Send requests to the backend API.
+    \item Display mock detection results.
+    \item Display previous scan history.
+\end{itemize}
+
+\subsection{Backend API Component}
+
+The backend API handles communication between the frontend, detection service, and database.
+
+\subsubsection{Responsibilities}
+
+\begin{itemize}
+    \item Receive image upload requests.
+    \item Validate file type.
+    \item Create processing jobs.
+    \item Send image metadata to the detection service.
+    \item Store detection results.
+    \item Return results to the frontend.
+\end{itemize}
+
+\subsection{Detection Pipeline Component}
+
+The detection pipeline is a simulated computer vision service. It does not need to run a real machine learning model for this project.
+
+\subsubsection{Responsibilities}
+
+\begin{itemize}
+    \item Receive an image ID or image metadata.
+    \item Simulate image preprocessing.
+    \item Generate mock crater detections.
+    \item Generate mock boulder detections.
+    \item Generate mock geological structure detections.
+    \item Return detection results as JSON.
+\end{itemize}
+
+\subsection{Database Component}
+
+The database stores mock image and detection information.
+
+\subsubsection{Planned Tables}
+
+\begin{longtable}{|p{1.7in}|p{4.3in}|}
+\hline
+\textbf{Table} & \textbf{Purpose} \\
+\hline
+images & Stores uploaded image metadata. \\
+\hline
+detections & Stores crater, boulder, and geological structure detections. \\
+\hline
+processing\_jobs & Stores processing status for each uploaded image. \\
+\hline
+users & Stores simulated user information if needed. \\
+\hline
+\end{longtable}
+
+\section{Tool Design}
+
+\subsection{GitHub}
+
+GitHub will be used to store the project repository. The repository will contain project documents, mock data, diagrams, Docker files, and other deliverables.
+
+\subsection{Docker}
+
+Docker Compose will be used to describe the expected project services. The planned services are:
+
+\begin{itemize}
+    \item Frontend service.
+    \item Backend service.
+    \item Detection service.
+    \item Database service.
+\end{itemize}
+
+\subsection{Jira}
+
+Jira will be used for sprint planning. The team will create tasks, bugs, and project objectives for each snapshot.
+
+Example Jira issue types include:
+
+\begin{itemize}
+    \item Epic.
+    \item Task.
+    \item Bug.
+    \item Story.
+\end{itemize}
+
+\subsection{TestRail}
+
+TestRail will be used to document test cases and test run summaries. TestRail reports will be included for later snapshots.
+
+The planned TestRail documents are:
+
+\begin{itemize}
+    \item Snapshot 2 TestRail report.
+    \item Snapshot 3 TestRail report.
+    \item Snapshot 4 TestRail report.
+\end{itemize}
+
+\subsection{LaTeX}
+
+LaTeX will be used to write formal project documents. These documents will be stored in the GitHub repository.
+
+Main LaTeX documents include:
+
+\begin{itemize}
+    \item Software Design Document.
+    \item Software Requirements Specification.
+    \item Design Specification.
+    \item User Manual.
+    \item Snapshot Objective documents.
+\end{itemize}
+
+\section{Mock Data Design}
+
+\subsection{Image Metadata}
+
+Each mock image should include the following information:
+
+\begin{itemize}
+    \item Image ID.
+    \item File name.
+    \item Upload date.
+    \item Image source.
+    \item Resolution.
+    \item Processing status.
+\end{itemize}
+
+\subsection{Detection Metadata}
+
+Each mock detection should include the following information:
+
+\begin{itemize}
+    \item Detection ID.
+    \item Image ID.
+    \item Feature type.
+    \item Confidence score.
+    \item Estimated size.
+    \item Bounding box coordinates.
+    \item Notes.
+\end{itemize}
+
+\subsection{Example Mock Detection}
+
+\begin{verbatim}
+{
+  "detection_id": "D-001",
+  "image_id": "IMG-001",
+  "feature_type": "Crater",
+  "confidence": 0.94,
+  "estimated_size_meters": 42,
+  "bounding_box": {
+    "x": 145,
+    "y": 220,
+    "width": 80,
+    "height": 78
+  },
+  "notes": "Large circular crater detected in upper-left region."
+}
+\end{verbatim}
+
+\section{Workflow Design}
+
+\subsection{High-Level Workflow}
+
+The high-level workflow for the system is:
+
+\begin{enumerate}
+    \item User opens the dashboard.
+    \item User uploads a lunar image.
+    \item Frontend sends the image information to the backend.
+    \item Backend creates a processing job.
+    \item Detection service generates mock detection results.
+    \item Backend stores the results.
+    \item Frontend displays the results to the user.
+\end{enumerate}
+
+\subsection{Workflow Diagram Placeholder}
+
+A workflow diagram should be added to the repository in the \texttt{diagrams/} folder.
+
+Expected file:
+
+\begin{verbatim}
+diagrams/workflow-diagram.png
+\end{verbatim}
+
+The diagram should show:
+
+\begin{itemize}
+    \item User.
+    \item Frontend dashboard.
+    \item Backend API.
+    \item Detection pipeline.
+    \item Database.
+    \item GitHub, Jira, Docker, and TestRail as project tools.
+\end{itemize}
+
+\section{Planned Snapshot Updates}
+
+\subsection{Snapshot 1}
+
+Snapshot 1 focuses on the foundation of the project.
+
+\begin{itemize}
+    \item Create repository structure.
+    \item Create SDD.
+    \item Create SRS.
+    \item Create Design Specification.
+    \item Create User Manual.
+    \item Create initial mock data.
+\end{itemize}
+
+\subsection{Snapshot 2}
+
+Snapshot 2 will add the first major feature.
+
+\begin{itemize}
+    \item Add boulder detection mock data.
+    \item Create TestRail report.
+    \item Add Jira bugs and tasks.
+    \item Update project documents.
+\end{itemize}
+
+\subsection{Snapshot 3}
+
+Snapshot 3 will add another feature.
+
+\begin{itemize}
+    \item Add crater size filtering.
+    \item Add detection history.
+    \item Update TestRail report.
+    \item Update project documents.
+\end{itemize}
+
+\subsection{Snapshot 4}
+
+Snapshot 4 will finalize the project.
+
+\begin{itemize}
+    \item Add final reflection.
+    \item Add future work.
+    \item Finalize documents.
+    \item Finalize GitHub repository.
+\end{itemize}
+
+\section{Limitations}
+
+This project is a simulation. The system is not expected to provide real mission-ready lunar detections. Mock data will be used to represent the type of results that a real detection system might produce.
+
+\section{Conclusion}
+
+This Design Specification explains the planned pages, components, tools, mock data, and workflow for the JPL Lunar Detection Pipeline. The design is intentionally simple so it can be completed and explained by a student team while still demonstrating realistic software engineering practices.
+
+\end{document}

@@ -1,0 +1,374 @@
+\documentclass[12pt]{article}
+
+\usepackage{geometry}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{array}
+
+\geometry{margin=1in}
+
+\title{
+    \textbf{User Manual} \\
+    JPL Lunar Detection Pipeline
+}
+\author{
+    Software Engineering Tools Final Project \\
+    Course: CS3338 \\
+    Team Members: [Name 1], [Name 2], [Name 3], [Name 4]
+}
+\date{Snapshot 1}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+
+\section*{Version History}
+\addcontentsline{toc}{section}{Version History}
+
+\begin{longtable}{|p{1.5in}|p{1.5in}|p{3in}|}
+\hline
+\textbf{Version} & \textbf{Date} & \textbf{Description} \\
+\hline
+1.0 & [Insert Date] & Initial user manual for Snapshot 1. Includes project overview, Jira placeholder, objective breakdown, access instructions, and usage instructions. \\
+\hline
+\end{longtable}
+
+\newpage
+
+\section{Introduction}
+
+\subsection{Purpose}
+
+This User Manual explains how to access, understand, and use the JPL Lunar Detection Pipeline project. The project is a simulated open-source computer vision toolset that detects lunar surface features such as craters, boulders, and geological structures.
+
+This manual is intended for students, instructors, testers, and simulated users who want to understand how the project is organized and how the planned system would be used.
+
+\subsection{Project Overview}
+
+The JPL Lunar Detection Pipeline is designed to simulate a software system that processes lunar surface images and returns detection results. Users can upload a lunar image, run simulated processing, and view mock detection results.
+
+The system is not intended to be a real mission-ready tool. It is a class project focused on demonstrating software engineering tools and documentation.
+
+\section{Jira Project Link}
+
+The Jira project link will be added after the Jira project is created.
+
+\begin{quote}
+\textbf{Jira Link:} [Insert Jira Link Here]
+\end{quote}
+
+This link should be updated before final submission.
+
+\section{Why This Software Matters}
+
+Lunar surface detection software can help researchers and mission planners better understand the Moon's terrain. Features such as craters, boulders, and ridges can affect rover navigation, landing site safety, and scientific analysis.
+
+In a real-world mission, this type of software could help identify dangerous areas, support autonomous navigation, and help scientists choose important regions to study. For this class project, mock data is used to simulate how such a system might work.
+
+\section{Formal Objective Breakdown}
+
+\subsection{Snapshot 1: Project Start}
+
+The goal of Snapshot 1 is to create the foundation of the project.
+
+Planned work includes:
+
+\begin{itemize}
+    \item Create the GitHub repository.
+    \item Set up the project folder structure.
+    \item Create the README file.
+    \item Create the Software Design Document.
+    \item Create the Software Requirements Specification.
+    \item Create the Design Specification.
+    \item Create the User Manual.
+    \item Create the first Snapshot Objective document.
+    \item Plan the first Jira sprint.
+    \item Create initial mock data examples.
+\end{itemize}
+
+\subsection{Snapshot 2: Checkpoint 1}
+
+The goal of Snapshot 2 is to add the first major feature and begin test documentation.
+
+Planned work includes:
+
+\begin{itemize}
+    \item Add simulated boulder detection.
+    \item Update the SDD and SRS.
+    \item Update the Design Specification and User Manual.
+    \item Create TestRail test cases.
+    \item Export or save a TestRail summary report.
+    \item Add Jira tasks and bugs.
+    \item Update the workflow diagram.
+\end{itemize}
+
+\subsection{Snapshot 3: Checkpoint 2}
+
+The goal of Snapshot 3 is to expand the system with another feature.
+
+Planned work includes:
+
+\begin{itemize}
+    \item Add crater size filtering.
+    \item Add detection history mock data.
+    \item Update the SDD and SRS.
+    \item Update the Design Specification and User Manual.
+    \item Create another TestRail report.
+    \item Add new Jira tasks and bugs.
+    \item Update the workflow diagram.
+\end{itemize}
+
+\subsection{Snapshot 4: Final Submission}
+
+The goal of Snapshot 4 is to finalize the project.
+
+Planned work includes:
+
+\begin{itemize}
+    \item Finalize all documents.
+    \item Add final TestRail report.
+    \item Add final reflection.
+    \item Add future work section.
+    \item Finalize the workflow diagram.
+    \item Submit the GitHub repository.
+\end{itemize}
+
+\section{How to Access the Project}
+
+\subsection{Cloning the Repository}
+
+After the GitHub repository is created, users can clone the project using the following command:
+
+\begin{verbatim}
+git clone [Insert GitHub Repository Link Here]
+\end{verbatim}
+
+Then move into the project folder:
+
+\begin{verbatim}
+cd jpl-lunar-detection-pipeline
+\end{verbatim}
+
+\subsection{Downloading the Project as a ZIP File}
+
+Users may also download the repository as a ZIP file.
+
+\begin{enumerate}
+    \item Open the GitHub repository.
+    \item Click the green ``Code'' button.
+    \item Select ``Download ZIP.''
+    \item Extract the ZIP file on your computer.
+\end{enumerate}
+
+\section{Project Folder Structure}
+
+The project repository is expected to use the following structure:
+
+\begin{verbatim}
+jpl-lunar-detection-pipeline/
+
+├── README.md
+├── docker-compose.yml
+
+├── docs/
+│   ├── SDD.tex
+│   ├── SRS.tex
+│   ├── DesignSpec.tex
+│   ├── UserManual.tex
+│   └── SnapshotObjectives/
+│       ├── Snapshot1_Start.tex
+│       ├── Snapshot2_Checkpoint1.tex
+│       ├── Snapshot3_Checkpoint2.tex
+│       └── Snapshot4_Final.tex
+
+├── diagrams/
+│   └── workflow-diagram.png
+
+├── jira/
+│   └── sprint1_tasks.md
+
+├── mock-data/
+│   ├── lunar_images_metadata.csv
+│   ├── crater_detections.json
+│   └── boulder_detections.json
+
+└── testrail/
+    ├── Snapshot2_TestRail_Report.pdf
+    ├── Snapshot3_TestRail_Report.pdf
+    └── Snapshot4_TestRail_Report.pdf
+\end{verbatim}
+
+\section{How to Use the Simulated System}
+
+\subsection{Step 1: Open the Dashboard}
+
+The user starts by opening the planned web dashboard. The dashboard will contain links to the Home, Upload, Results, History, and About pages.
+
+\subsection{Step 2: Upload a Lunar Image}
+
+The user selects a lunar surface image on the Upload Page. The expected valid file types are:
+
+\begin{itemize}
+    \item JPG
+    \item JPEG
+    \item PNG
+\end{itemize}
+
+\subsection{Step 3: Process the Image}
+
+After uploading the image, the user clicks the ``Process Image'' button. The system then creates a simulated processing job.
+
+\subsection{Step 4: View Detection Results}
+
+The Results Page displays mock detection results. These results may include:
+
+\begin{itemize}
+    \item Crater detections.
+    \item Boulder detections.
+    \item Geological structure detections.
+    \item Confidence scores.
+    \item Estimated sizes.
+    \item Bounding box coordinates.
+\end{itemize}
+
+\subsection{Step 5: View Detection History}
+
+The History Page allows the user to view previous simulated image processing runs.
+
+\section{Example User Workflow}
+
+A typical user workflow is:
+
+\begin{enumerate}
+    \item User opens the Lunar Detection Dashboard.
+    \item User clicks the Upload page.
+    \item User selects a lunar image file.
+    \item User clicks ``Process Image.''
+    \item System displays a processing message.
+    \item System displays mock crater and boulder detections.
+    \item User reviews the detection results.
+    \item User checks the History page for previous scans.
+\end{enumerate}
+
+\section{How to Run the Planned Services}
+
+This project is mainly a documentation and tools simulation. However, the planned services can be described using Docker Compose.
+
+To start the planned services, run:
+
+\begin{verbatim}
+docker-compose up
+\end{verbatim}
+
+To stop the planned services, run:
+
+\begin{verbatim}
+docker-compose down
+\end{verbatim}
+
+Not all services are expected to be fully implemented for this class project.
+
+\section{Mock Data}
+
+The system uses mock data to represent detection results.
+
+\subsection{Example Mock Detection}
+
+\begin{verbatim}
+{
+  "detection_id": "D-001",
+  "image_id": "IMG-001",
+  "feature_type": "Crater",
+  "confidence": 0.94,
+  "estimated_size_meters": 42,
+  "notes": "Large circular crater detected in upper-left region."
+}
+\end{verbatim}
+
+\subsection{Mock Data Files}
+
+Mock data should be stored in the \texttt{mock-data/} folder.
+
+Expected files include:
+
+\begin{itemize}
+    \item \texttt{lunar\_images\_metadata.csv}
+    \item \texttt{crater\_detections.json}
+    \item \texttt{boulder\_detections.json}
+\end{itemize}
+
+\section{Troubleshooting}
+
+\subsection{Invalid File Type}
+
+If an invalid file type is uploaded, the system should display an error message.
+
+Example:
+
+\begin{quote}
+Invalid file type. Please upload a JPG, JPEG, or PNG image.
+\end{quote}
+
+\subsection{Processing Fails}
+
+If mock processing fails, the system should display a failed status and a simple explanation.
+
+Example:
+
+\begin{quote}
+Processing failed. Please try uploading the image again.
+\end{quote}
+
+\subsection{No Results Displayed}
+
+If no results are displayed, the user should check whether:
+
+\begin{itemize}
+    \item The image was uploaded successfully.
+    \item The mock data file exists.
+    \item The processing status is marked complete.
+\end{itemize}
+
+\section{Testing Information}
+
+Testing will be documented in TestRail during later snapshots.
+
+Example test areas include:
+
+\begin{itemize}
+    \item Uploading a valid image.
+    \item Uploading an invalid file type.
+    \item Viewing mock crater detections.
+    \item Viewing mock boulder detections.
+    \item Checking detection history.
+    \item Verifying processing status messages.
+\end{itemize}
+
+\section{Project Limitations}
+
+This project is a simulation for a Software Engineering Tools class. The detection results are not real mission-ready outputs. The project uses mock data to demonstrate how a lunar detection system might be planned, documented, tested, and managed.
+
+\section{Future Work}
+
+Possible future improvements include:
+
+\begin{itemize}
+    \item Add real lunar image datasets.
+    \item Add a real computer vision detection model.
+    \item Add image overlays for detections.
+    \item Add crater size filters.
+    \item Add boulder risk scoring.
+    \item Add user login.
+    \item Add exportable detection reports.
+\end{itemize}
+
+\section{Conclusion}
+
+This User Manual explains how the JPL Lunar Detection Pipeline project is organized and how a user would interact with the simulated system. The project is designed to demonstrate GitHub, Docker, Jira, TestRail, and LaTeX usage in a realistic software engineering workflow.
+
+\end{document}
