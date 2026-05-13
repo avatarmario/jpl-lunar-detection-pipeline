@@ -1,0 +1,133 @@
+\documentclass[12pt]{article}
+
+\usepackage{geometry}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{array}
+
+\geometry{margin=1in}
+
+\title{
+    \textbf{Snapshot 1 Objective: Project Start} \\
+    JPL Lunar Detection Pipeline
+}
+\author{
+    Software Engineering Tools Final Project \\
+    Course: CS3338 \\
+    Team Members: [Name 1], [Name 2], [Name 3], [Name 4]
+}
+\date{[Insert Date]}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\section{Objective}
+
+The objective of Snapshot 1 is to create the foundation for the JPL Lunar Detection Pipeline project. This snapshot focuses on setting up the project structure, defining the main idea, and creating the first versions of the required documents.
+
+The project will simulate a lunar surface detection pipeline that identifies craters, boulders, and geological structures using mock data.
+
+\section{Goals for Snapshot 1}
+
+The goals for Snapshot 1 are:
+
+\begin{itemize}
+    \item Create the GitHub repository.
+    \item Set up the project folder structure.
+    \item Create the initial README file.
+    \item Create the Software Design Document.
+    \item Create the Software Requirements Specification.
+    \item Create the Design Specification.
+    \item Create the User Manual.
+    \item Create the Snapshot Objective documents.
+    \item Plan the first Jira sprint.
+    \item Create initial mock data examples.
+    \item Plan the Docker Compose services.
+\end{itemize}
+
+\section{Planned Repository Structure}
+
+The project repository should include the following folders:
+
+\begin{verbatim}
+jpl-lunar-detection-pipeline/
+
+├── README.md
+├── docker-compose.yml
+
+├── docs/
+│   ├── SDD.tex
+│   ├── SRS.tex
+│   ├── DesignSpec.tex
+│   ├── UserManual.tex
+│   └── SnapshotObjectives/
+
+├── diagrams/
+│   └── workflow-diagram.png
+
+├── jira/
+│   └── sprint1_tasks.md
+
+├── mock-data/
+│   ├── lunar_images_metadata.csv
+│   ├── crater_detections.json
+│   └── boulder_detections.json
+
+└── testrail/
+\end{verbatim}
+
+\section{Initial System Plan}
+
+The system will be designed as a simulated web application with the following components:
+
+\begin{itemize}
+    \item Frontend dashboard.
+    \item Backend API.
+    \item Mock detection pipeline.
+    \item Database.
+    \item Mock data files.
+\end{itemize}
+
+The frontend will allow users to upload lunar images and view detection results. The backend will handle image requests and communicate with the mock detection service. The mock detection service will return simulated crater, boulder, and geological structure detections.
+
+\section{Jira Sprint 1 Planning}
+
+The first Jira sprint will focus on project setup and documentation.
+
+Example Sprint 1 tasks include:
+
+\begin{itemize}
+    \item Create GitHub repository.
+    \item Create project folder structure.
+    \item Draft SDD.
+    \item Draft SRS.
+    \item Draft README.
+    \item Draft Design Specification.
+    \item Draft User Manual.
+    \item Create initial mock data.
+    \item Plan Docker Compose services.
+\end{itemize}
+
+\section{Expected Deliverables}
+
+By the end of Snapshot 1, the project should include:
+
+\begin{itemize}
+    \item GitHub repository.
+    \item README file.
+    \item Initial SDD document.
+    \item Initial SRS document.
+    \item Initial Design Specification.
+    \item Initial User Manual.
+    \item Snapshot 1 Objective document.
+    \item Initial Jira sprint task list.
+    \item Initial mock data planning.
+\end{itemize}
+
+\section{Reflection}
+
+Snapshot 1 focuses on planning and setup. Since this is the first snapshot, there is no previous work to reflect on yet. Reflection will begin in Snapshot 2, where the team will review what was completed and what needs to be improved.
+
+\end{document}

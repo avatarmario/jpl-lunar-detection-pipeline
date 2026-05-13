@@ -1,0 +1,191 @@
+\documentclass[12pt]{article}
+
+\usepackage{geometry}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{array}
+
+\geometry{margin=1in}
+
+\title{
+    \textbf{Snapshot 3 Objective: Checkpoint 2} \\
+    JPL Lunar Detection Pipeline
+}
+\author{
+    Software Engineering Tools Final Project \\
+    Course: CS3338 \\
+    Team Members: [Name 1], [Name 2], [Name 3], [Name 4]
+}
+\date{[Insert Date]}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\section{Objective}
+
+The objective of Snapshot 3 is to add another major feature to the JPL Lunar Detection Pipeline. For this checkpoint, the new feature will be crater size filtering and detection history.
+
+This snapshot also updates the project documents, Jira tasks, TestRail test cases, and workflow diagram.
+
+\section{Reflection on Snapshot 2}
+
+During Snapshot 2, the team added simulated boulder detection. The project was updated to include boulder mock data, new Jira tasks, and the first TestRail test cases.
+
+Completed items from Snapshot 2 include:
+
+\begin{itemize}
+    \item Added boulder detection mock data.
+    \item Updated SDD and SRS.
+    \item Updated Design Specification and User Manual.
+    \item Created Jira tasks and bugs for boulder detection.
+    \item Created Snapshot 2 TestRail test cases.
+    \item Updated the workflow diagram.
+\end{itemize}
+
+Snapshot 3 builds on this progress by adding more useful ways to view and organize detection results.
+
+\section{New Feature: Crater Size Filtering}
+
+The first new feature for Snapshot 3 is crater size filtering. This feature allows users to filter crater detections based on estimated crater size.
+
+\subsection{Feature Description}
+
+Crater size filtering helps users focus on certain types of craters. For example, a user may want to view only craters larger than 25 meters or only small craters below 10 meters.
+
+For this project, crater size filtering will be simulated using mock data.
+
+\subsection{Example Filter Options}
+
+\begin{itemize}
+    \item Show all craters.
+    \item Show small craters less than 10 meters.
+    \item Show medium craters between 10 and 50 meters.
+    \item Show large craters greater than 50 meters.
+\end{itemize}
+
+\section{New Feature: Detection History}
+
+The second new feature for Snapshot 3 is detection history. This feature allows users to view previous image processing runs.
+
+\subsection{Feature Description}
+
+The History Page will show previous uploaded images and their processing results. This makes the simulated system feel more complete and realistic.
+
+\subsection{Example History Data}
+
+\begin{longtable}{|p{1in}|p{1.7in}|p{1.5in}|p{1.2in}|}
+\hline
+\textbf{Image ID} & \textbf{File Name} & \textbf{Status} & \textbf{Detections} \\
+\hline
+IMG-001 & lunar\_south\_pole.jpg & Complete & 14 \\
+\hline
+IMG-002 & crater\_field.png & Complete & 22 \\
+\hline
+IMG-003 & mare\_region.jpg & Failed & 0 \\
+\hline
+\end{longtable}
+
+\section{Goals for Snapshot 3}
+
+The goals for Snapshot 3 are:
+
+\begin{itemize}
+    \item Add crater size filtering mock data.
+    \item Add detection history mock data.
+    \item Update the Results Page design.
+    \item Update the History Page design.
+    \item Update the SDD.
+    \item Update the SRS.
+    \item Update the Design Specification.
+    \item Update the User Manual.
+    \item Add new Jira tasks and bugs.
+    \item Create Snapshot 3 TestRail test cases.
+    \item Export or save the Snapshot 3 TestRail summary report.
+    \item Update the workflow diagram.
+\end{itemize}
+
+\section{Planned Jira Tasks}
+
+Example Jira tasks for Snapshot 3 include:
+
+\begin{longtable}{|p{1.5in}|p{4.5in}|}
+\hline
+\textbf{Issue Type} & \textbf{Task} \\
+\hline
+Task & Add crater size filter options. \\
+\hline
+Task & Add mock detection history data. \\
+\hline
+Task & Update Results Page design. \\
+\hline
+Task & Update History Page design. \\
+\hline
+Task & Update SRS with new filtering requirements. \\
+\hline
+Task & Create TestRail test cases for crater filtering. \\
+\hline
+Bug & Crater filter does not update detection count. \\
+\hline
+Bug & History page shows failed scans as complete. \\
+\hline
+\end{longtable}
+
+\section{TestRail Plan}
+
+Snapshot 3 will include a second TestRail report.
+
+Example test cases include:
+
+\begin{longtable}{|p{1.2in}|p{2.4in}|p{2.4in}|}
+\hline
+\textbf{Test ID} & \textbf{Test Case} & \textbf{Expected Result} \\
+\hline
+TC-006 & Filter small craters & Only small crater detections are displayed. \\
+\hline
+TC-007 & Filter medium craters & Only medium crater detections are displayed. \\
+\hline
+TC-008 & Filter large craters & Only large crater detections are displayed. \\
+\hline
+TC-009 & View detection history & Previous scans appear on the History Page. \\
+\hline
+TC-010 & Open previous scan result & Selected previous scan displays its detection results. \\
+\hline
+\end{longtable}
+
+\section{Documents to Update}
+
+The following documents should be updated during Snapshot 3:
+
+\begin{itemize}
+    \item SDD.tex
+    \item SRS.tex
+    \item DesignSpec.tex
+    \item UserManual.tex
+    \item README.md
+    \item Snapshot3\_Checkpoint2.tex
+\end{itemize}
+
+\section{Expected Deliverables}
+
+By the end of Snapshot 3, the project should include:
+
+\begin{itemize}
+    \item Crater size filtering mock data.
+    \item Detection history mock data.
+    \item Updated SDD.
+    \item Updated SRS.
+    \item Updated Design Specification.
+    \item Updated User Manual.
+    \item Updated README.
+    \item Jira tasks and bugs for Snapshot 3.
+    \item Snapshot 3 TestRail report.
+    \item Updated workflow diagram.
+\end{itemize}
+
+\section{Reflection Placeholder}
+
+This section will be completed after Snapshot 3 is finished. The team will describe what was completed, what issues came up, and what should be finalized during Snapshot 4.
+
+\end{document}

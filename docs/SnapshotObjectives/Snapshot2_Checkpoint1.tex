@@ -1,0 +1,175 @@
+\documentclass[12pt]{article}
+
+\usepackage{geometry}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{array}
+
+\geometry{margin=1in}
+
+\title{
+    \textbf{Snapshot 2 Objective: Checkpoint 1} \\
+    JPL Lunar Detection Pipeline
+}
+\author{
+    Software Engineering Tools Final Project \\
+    Course: CS3338 \\
+    Team Members: [Name 1], [Name 2], [Name 3], [Name 4]
+}
+\date{[Insert Date]}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\section{Objective}
+
+The objective of Snapshot 2 is to add the first major feature to the JPL Lunar Detection Pipeline. For this checkpoint, the main new feature will be simulated boulder detection.
+
+This snapshot also introduces TestRail documentation and updates the project documents based on the new feature.
+
+\section{Reflection on Snapshot 1}
+
+During Snapshot 1, the team created the foundation of the project. The main completed items were:
+
+\begin{itemize}
+    \item GitHub repository structure.
+    \item Initial README file.
+    \item Software Design Document.
+    \item Software Requirements Specification.
+    \item Design Specification.
+    \item User Manual.
+    \item Snapshot Objective documents.
+    \item Initial Jira task planning.
+    \item Initial mock data planning.
+\end{itemize}
+
+The project is now ready to add a new simulated feature and begin testing documentation.
+
+\section{New Feature: Boulder Detection}
+
+The new feature for Snapshot 2 is simulated boulder detection. The system will use mock data to represent boulders found in lunar surface images.
+
+\subsection{Feature Description}
+
+Boulder detection will identify rock-like objects on the lunar surface. In a real mission, boulders may be important because they can create navigation hazards for rovers or landing systems.
+
+For this project, boulder detection will be simulated using JSON mock data.
+
+\subsection{Example Boulder Detection Data}
+
+\begin{verbatim}
+{
+  "detection_id": "B-001",
+  "image_id": "IMG-001",
+  "feature_type": "Boulder",
+  "confidence": 0.87,
+  "estimated_size_meters": 3.2,
+  "bounding_box": {
+    "x": 320,
+    "y": 180,
+    "width": 25,
+    "height": 22
+  },
+  "risk_level": "Medium"
+}
+\end{verbatim}
+
+\section{Goals for Snapshot 2}
+
+The goals for Snapshot 2 are:
+
+\begin{itemize}
+    \item Add boulder detection mock data.
+    \item Update the SDD with the boulder detection feature.
+    \item Update the SRS with new boulder detection requirements.
+    \item Update the Design Specification.
+    \item Update the User Manual.
+    \item Add Jira tasks for boulder detection.
+    \item Add Jira bug examples related to boulder detection.
+    \item Create the first TestRail test cases.
+    \item Export or save the Snapshot 2 TestRail summary report.
+    \item Update the workflow diagram.
+\end{itemize}
+
+\section{Planned Jira Tasks}
+
+Example Jira tasks for Snapshot 2 include:
+
+\begin{longtable}{|p{1.5in}|p{4.5in}|}
+\hline
+\textbf{Issue Type} & \textbf{Task} \\
+\hline
+Task & Add boulder detection mock data file. \\
+\hline
+Task & Update SDD with boulder detection component. \\
+\hline
+Task & Update SRS with boulder detection requirements. \\
+\hline
+Task & Update User Manual with boulder detection instructions. \\
+\hline
+Task & Create TestRail test cases for boulder detection. \\
+\hline
+Bug & Boulder confidence score displays as decimal instead of percentage. \\
+\hline
+Bug & Boulder risk level does not appear on the Results Page. \\
+\hline
+\end{longtable}
+
+\section{TestRail Plan}
+
+Snapshot 2 will include the first TestRail report.
+
+Example test cases include:
+
+\begin{longtable}{|p{1.2in}|p{2.4in}|p{2.4in}|}
+\hline
+\textbf{Test ID} & \textbf{Test Case} & \textbf{Expected Result} \\
+\hline
+TC-001 & Upload valid lunar image & Image is accepted and processing starts. \\
+\hline
+TC-002 & Upload invalid file type & System rejects file and displays error. \\
+\hline
+TC-003 & View boulder detections & Boulder results appear on Results Page. \\
+\hline
+TC-004 & Check boulder confidence score & Confidence score displays correctly as a percentage. \\
+\hline
+TC-005 & Check boulder risk level & Risk level appears for each boulder detection. \\
+\hline
+\end{longtable}
+
+\section{Documents to Update}
+
+The following documents should be updated during Snapshot 2:
+
+\begin{itemize}
+    \item SDD.tex
+    \item SRS.tex
+    \item DesignSpec.tex
+    \item UserManual.tex
+    \item README.md
+    \item Snapshot2\_Checkpoint1.tex
+\end{itemize}
+
+\section{Expected Deliverables}
+
+By the end of Snapshot 2, the project should include:
+
+\begin{itemize}
+    \item Boulder detection mock data.
+    \item Updated SDD.
+    \item Updated SRS.
+    \item Updated Design Specification.
+    \item Updated User Manual.
+    \item Updated README.
+    \item Jira tasks and bugs for Snapshot 2.
+    \item Snapshot 2 TestRail report.
+    \item Updated workflow diagram.
+\end{itemize}
+
+\section{Reflection Placeholder}
+
+This section will be completed after Snapshot 2 is finished. The team will describe what was completed, what issues came up, and what should be improved for Snapshot 3.
+
+\end{document}
