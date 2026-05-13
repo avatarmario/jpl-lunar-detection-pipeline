@@ -1,0 +1,112 @@
+# -------------------------
+# Operating system files
+# -------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -------------------------
+# Editor / IDE files
+# -------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# -------------------------
+# Environment files
+# -------------------------
+.env
+.env.local
+.env.*.local
+
+# -------------------------
+# Node / React frontend
+# -------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Build output
+build/
+dist/
+
+# -------------------------
+# Python detection service
+# -------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Python testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# -------------------------
+# LaTeX generated files
+# Keep .tex files tracked
+# -------------------------
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+
+# Optional: ignore compiled PDFs if your professor only wants .tex
+# If you want to submit PDFs too, remove this line.
+*.pdf
+
+# -------------------------
+# Docker
+# -------------------------
+.docker/
+docker-data/
+*.pid
+
+# -------------------------
+# Database / local data
+# -------------------------
+*.sqlite
+*.sqlite3
+*.db
+postgres-data/
+pgdata/
+
+# -------------------------
+# Logs
+# -------------------------
+logs/
+*.log
+
+# -------------------------
+# Temporary files
+# -------------------------
+tmp/
+temp/
+*.tmp
+*.bak
+*.backup
+
+# -------------------------
+# Mock generated outputs
+# -------------------------
+outputs/
+processed-images/
+uploads/

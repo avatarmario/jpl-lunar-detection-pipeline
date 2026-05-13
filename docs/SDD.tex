@@ -1,0 +1,283 @@
+\documentclass[12pt]{article}
+
+\usepackage{geometry}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{array}
+
+\geometry{margin=1in}
+
+\title{
+    \textbf{Software Design Document} \\
+    JPL Lunar Detection Pipeline
+}
+\author{
+    Software Engineering Tools Final Project \\
+    Student Name: [Your Name] \\
+    Course: CS3338
+}
+\date{Snapshot 1}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+
+\section*{Version History}
+\addcontentsline{toc}{section}{Version History}
+
+\begin{longtable}{|p{1.5in}|p{1.5in}|p{3in}|}
+\hline
+\textbf{Version} & \textbf{Date} & \textbf{Description} \\
+\hline
+1.0 & [Insert Date] & Initial Software Design Document for Snapshot 1. Includes project overview, proposed architecture, user interface concept, and glossary. \\
+\hline
+\end{longtable}
+
+\newpage
+
+\section{Introduction}
+
+\subsection{Purpose}
+
+The purpose of this Software Design Document is to describe the planned design of the JPL Lunar Detection Pipeline, a simulated open-source computer vision toolset for detecting and mapping lunar surface features. The system is designed to identify craters, boulders, and other geological structures from lunar surface imagery. 
+
+This project is being completed as a simulation for a Software Engineering Tools course. The main goal is not to fully implement the production software, but to demonstrate the planning, documentation, tool usage, project management, testing, and deployment workflow used in a realistic software engineering project.
+
+\subsection{Intended Audience}
+
+The intended audience for this document includes:
+
+\begin{itemize}
+    \item The course instructor reviewing the final project.
+    \item Student developers simulating the software engineering process.
+    \item Future contributors who may want to understand the design of the lunar detection pipeline.
+    \item Testers who need to understand system components before creating TestRail test cases.
+    \item Project managers who need a high-level understanding of the architecture and workflow.
+\end{itemize}
+
+\subsection{Project Overview}
+
+The JPL Lunar Detection Pipeline is designed as a modular computer vision system that processes lunar imagery and produces detection results for important lunar surface features. The simulated system accepts lunar image files, runs preprocessing steps, performs feature detection, stores detection metadata, and displays results through a web-based dashboard.
+
+The system focuses on three main detection categories:
+
+\begin{itemize}
+    \item \textbf{Craters:} Circular or semi-circular depressions on the lunar surface.
+    \item \textbf{Boulders:} Rock-like objects that may affect rover navigation.
+    \item \textbf{Geological structures:} Surface patterns such as ridges, shadows, slopes, or unusual terrain formations.
+\end{itemize}
+
+The software is intended to support lunar navigation planning, scientific analysis, and mission simulation. For this class project, the detections and data will be represented using mock datasets and simulated outputs.
+
+\subsection{Project Scope}
+
+The scope of this project includes the design and simulation of the following components:
+
+\begin{itemize}
+    \item A web dashboard for uploading and viewing lunar imagery.
+    \item A backend service that receives image processing requests.
+    \item A mock computer vision pipeline that simulates crater and boulder detection.
+    \item A database for storing image metadata and detection results.
+    \item A Docker Compose file that defines the expected services.
+    \item Jira tasks for sprint planning.
+    \item TestRail test cases and reports for later snapshots.
+    \item LaTeX documentation for the SDD, SRS, user manual, design specification, and snapshot objectives.
+\end{itemize}
+
+The project does not require a fully functional machine learning model. Instead, the system will use mock detection data to represent realistic output from a computer vision pipeline.
+
+\section{System Architecture}
+
+\subsection{Architecture Overview}
+
+The JPL Lunar Detection Pipeline will use a modular client-server architecture. The system is divided into four major layers:
+
+\begin{enumerate}
+    \item \textbf{Frontend Dashboard:} Allows users to upload lunar images and view detection results.
+    \item \textbf{Backend API:} Handles requests from the frontend and communicates with the detection pipeline and database.
+    \item \textbf{Detection Pipeline Service:} Simulates image preprocessing and feature detection.
+    \item \textbf{Database Layer:} Stores image metadata, detection results, user actions, and processing status.
+\end{enumerate}
+
+This architecture allows each component to be developed, tested, and deployed separately. It also supports future expansion, such as replacing the mock detection service with an actual computer vision model.
+
+\subsection{Proposed Technology Stack}
+
+\begin{longtable}{|p{1.7in}|p{2in}|p{2.5in}|}
+\hline
+\textbf{Component} & \textbf{Tool or Technology} & \textbf{Purpose} \\
+\hline
+Frontend & React.js & Provides the user dashboard for image uploads and result viewing. \\
+\hline
+Backend & Node.js with Express & Handles API routes, image requests, and communication between services. \\
+\hline
+Detection Service & Python & Simulates image preprocessing and computer vision detection logic. \\
+\hline
+Database & PostgreSQL & Stores image metadata, detection results, and processing status. \\
+\hline
+Containerization & Docker Compose & Defines and runs the simulated frontend, backend, database, and detection services. \\
+\hline
+Version Control & GitHub & Stores project documents, source files, workflow diagrams, and mock data. \\
+\hline
+Project Management & Jira & Tracks sprint tasks, bugs, feature requests, and project progress. \\
+\hline
+Testing & TestRail & Stores test cases and test run summaries for each checkpoint snapshot. \\
+\hline
+Documentation & LaTeX & Creates formal project documents such as SDD, SRS, and design specifications. \\
+\hline
+\end{longtable}
+
+\subsection{High-Level Workflow}
+
+The expected system workflow is as follows:
+
+\begin{enumerate}
+    \item The user opens the Lunar Detection Dashboard.
+    \item The user uploads a lunar surface image.
+    \item The frontend sends the image and metadata to the backend API.
+    \item The backend stores the image metadata in the database.
+    \item The backend sends a processing request to the detection pipeline service.
+    \item The detection pipeline simulates preprocessing, crater detection, boulder detection, and confidence scoring.
+    \item Detection results are returned to the backend.
+    \item The backend stores the results in the database.
+    \item The frontend displays the processed image, bounding boxes, confidence scores, and detection summary.
+\end{enumerate}
+
+\subsection{Major System Components}
+
+\subsubsection{Frontend Dashboard}
+
+The frontend dashboard is the main user-facing part of the system. It allows users to upload lunar images, view processing status, and inspect detection results. The dashboard will include sections for image upload, detection summaries, visual overlays, and previous scan history.
+
+\subsubsection{Backend API}
+
+The backend API manages communication between the frontend, detection service, and database. It provides endpoints for uploading images, retrieving detection results, checking processing status, and viewing past image scans.
+
+Example API endpoints may include:
+
+\begin{itemize}
+    \item \texttt{POST /api/images/upload}
+    \item \texttt{GET /api/images}
+    \item \texttt{GET /api/images/:id/results}
+    \item \texttt{GET /api/images/:id/status}
+\end{itemize}
+
+\subsubsection{Detection Pipeline Service}
+
+The detection pipeline service simulates the computer vision portion of the project. In a real system, this service would use image processing and machine learning models to identify lunar features. In this simulated project, the service will produce mock detections using predefined JSON data.
+
+Each detection result may include:
+
+\begin{itemize}
+    \item Detection ID
+    \item Feature type
+    \item Bounding box coordinates
+    \item Confidence score
+    \item Estimated diameter or size
+    \item Image ID
+\end{itemize}
+
+\subsubsection{Database}
+
+The database stores all important project data. This includes uploaded image metadata, detection results, processing status, and simulated user activity.
+
+Example tables include:
+
+\begin{itemize}
+    \item \texttt{images}
+    \item \texttt{detections}
+    \item \texttt{processing\_jobs}
+    \item \texttt{users}
+\end{itemize}
+
+\section{User Interface}
+
+\subsection{Dashboard Overview}
+
+The user interface will be a web dashboard designed for researchers, mission planners, and student testers. The dashboard should be simple and easy to navigate.
+
+The main pages will include:
+
+\begin{itemize}
+    \item \textbf{Home Page:} Provides a short description of the project and navigation links.
+    \item \textbf{Upload Page:} Allows users to upload lunar images for processing.
+    \item \textbf{Results Page:} Displays detected craters, boulders, and geological structures.
+    \item \textbf{History Page:} Lists previous image scans and processing results.
+    \item \textbf{About Page:} Explains the project purpose, tools used, and simulation limits.
+\end{itemize}
+
+\subsection{User Interaction Flow}
+
+A typical user interaction will follow this sequence:
+
+\begin{enumerate}
+    \item User visits the dashboard.
+    \item User selects an image file from their computer.
+    \item User clicks the ``Process Image'' button.
+    \item System displays a processing status message.
+    \item System displays detection results after processing is complete.
+    \item User reviews the detection summary and image overlay.
+\end{enumerate}
+
+\subsection{Mock Detection Output}
+
+The results page will show mock detection data similar to the following:
+
+\begin{longtable}{|p{1in}|p{1.5in}|p{1.5in}|p{1.5in}|}
+\hline
+\textbf{ID} & \textbf{Feature Type} & \textbf{Confidence} & \textbf{Estimated Size} \\
+\hline
+D-001 & Crater & 94\% & 42 meters \\
+\hline
+D-002 & Boulder & 87\% & 3.2 meters \\
+\hline
+D-003 & Crater & 91\% & 18 meters \\
+\hline
+D-004 & Ridge Structure & 78\% & 120 meters \\
+\hline
+\end{longtable}
+
+\section{Glossary}
+
+\begin{longtable}{|p{1.5in}|p{4.5in}|}
+\hline
+\textbf{Term} & \textbf{Definition} \\
+\hline
+API & Application Programming Interface. Allows different software components to communicate. \\
+\hline
+Computer Vision & A field of computing that allows software to interpret image data. \\
+\hline
+Crater & A circular depression on the lunar surface, often caused by impact events. \\
+\hline
+Detection Pipeline & A sequence of software steps that processes an image and identifies objects or features. \\
+\hline
+Docker & A tool used to package and run software services in containers. \\
+\hline
+Jira & A project management tool used to track tasks, bugs, and sprint progress. \\
+\hline
+Mock Data & Simulated data used to represent realistic output without requiring a fully working system. \\
+\hline
+SDD & Software Design Document. Describes how the software system is designed. \\
+\hline
+SRS & Software Requirements Specification. Describes what the software system must do. \\
+\hline
+TestRail & A test case management tool used to organize and report testing results. \\
+\hline
+\end{longtable}
+
+\section{References}
+
+\begin{itemize}
+    \item NASA Jet Propulsion Laboratory. Lunar and planetary exploration resources.
+    \item GitHub Documentation. Version control and repository management.
+    \item Docker Documentation. Docker Compose service configuration.
+    \item Jira Documentation. Sprint planning and issue tracking.
+    \item TestRail Documentation. Test case and test run reporting.
+\end{itemize}
+
+\end{document}
