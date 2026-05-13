@@ -159,3 +159,20 @@ jpl-lunar-detection-pipeline/
     ├── Snapshot2_TestRail_Report.pdf
     ├── Snapshot3_TestRail_Report.pdf
     └── Snapshot4_TestRail_Report.pdf
+
+## Worklfow Diagram 
+
+flowchart LR
+    User[User] --> Frontend[Frontend Dashboard]
+    Frontend --> Backend[Backend API]
+    Backend --> Detection[Mock Detection Service]
+    Detection --> MockData[Mock Data Files]
+    Backend --> Database[(Database)]
+    Database --> Backend
+    Backend --> Frontend
+    Frontend --> User
+
+    GitHub[GitHub Repository] -. stores docs/code .- Frontend
+    Docker[Docker Compose] -. defines services .- Backend
+    Jira[Jira] -. tracks tasks/bugs .- Backend
+    TestRail[TestRail] -. test reports .- Frontend
