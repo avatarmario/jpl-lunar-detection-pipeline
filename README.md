@@ -10,7 +10,7 @@ This project is being completed for a Software Engineering Tools class. The main
 
 Jira project link:
 
-**[Insert Jira Link Here]**
+** https://cs3338-group2sr.atlassian.net/?continue=https%3A%2F%2Fcs3338-group2sr.atlassian.net%2Fwelcome%2Fsoftware%3FprojectId%3D10165&atlOrigin=eyJpIjoiMzIyMTg0NGZjZmZjNGJiNDk1ZjljZWNhY2MzYjE5NzgiLCJwIjoiamlyYS1zb2Z0d2FyZSJ9 **
 
 This link will be updated after the Jira project is created.
 
@@ -125,6 +125,23 @@ The simulated system is expected to include:
 | Detection Service | Python | Simulated computer vision pipeline |
 | Database | PostgreSQL | Stores mock image and detection data |
 
+## Worklfow Diagram 
+
+flowchart LR
+    User[User] --> Frontend[Frontend Dashboard]
+    Frontend --> Backend[Backend API]
+    Backend --> Detection[Mock Detection Service]
+    Detection --> MockData[Mock Data Files]
+    Backend --> Database[(Database)]
+    Database --> Backend
+    Backend --> Frontend
+    Frontend --> User
+
+    GitHub[GitHub Repository] -. stores docs/code .- Frontend
+    Docker[Docker Compose] -. defines services .- Backend
+    Jira[Jira] -. tracks tasks/bugs .- Backend
+    TestRail[TestRail] -. test reports .- Frontend
+
 ## Project Folder Structure
 
 ```text
@@ -160,19 +177,3 @@ jpl-lunar-detection-pipeline/
     ├── Snapshot3_TestRail_Report.pdf
     └── Snapshot4_TestRail_Report.pdf
 
-## Worklfow Diagram 
-
-flowchart LR
-    User[User] --> Frontend[Frontend Dashboard]
-    Frontend --> Backend[Backend API]
-    Backend --> Detection[Mock Detection Service]
-    Detection --> MockData[Mock Data Files]
-    Backend --> Database[(Database)]
-    Database --> Backend
-    Backend --> Frontend
-    Frontend --> User
-
-    GitHub[GitHub Repository] -. stores docs/code .- Frontend
-    Docker[Docker Compose] -. defines services .- Backend
-    Jira[Jira] -. tracks tasks/bugs .- Backend
-    TestRail[TestRail] -. test reports .- Frontend
